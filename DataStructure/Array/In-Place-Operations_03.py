@@ -15,3 +15,6 @@ class Solution(object):
     
         for i in range(wi, len(nums)):
             nums[i] = 0
+
+print(sorted("This is a test string from Andrew".split(), key=str.lower))
+print(str.lower("A"))
