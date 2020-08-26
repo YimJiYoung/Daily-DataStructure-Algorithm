@@ -33,18 +33,29 @@ class Solution(object):
     #     return Solution.cntPerfectSquares[n]
 
     # Using BFS
-    def numSquares(self, n):
-        """
-        :type n: int
-        :rtype: int
-        """
-        # perfect squares smallar than n
-        sqrt = int(math.sqrt(n))
-        perfectSquares = list(range(1, sqrt))
+    # def numSquares(self, n):
+    #     """
+    #     :type n: int
+    #     :rtype: int
+    #     """
+    #     # perfect squares smallar than n
+    #     sqrt = int(math.sqrt(n))
+    #     perfectSquares = [i*i for i in range(1, sqrt + 1)]
 
-        toCheck = {n}
+    #     toCheck = {n}
+    #     cnt = 0
 
-        while toCheck:
+    #     while toCheck:
+    #         nextCheck = set()
+    #         for m in toCheck :
+    #             print(m, cnt)
+    #             if m == 0:
+    #                 return cnt
+    #             for square in perfectSquares:
+    #                 if (m - square >= 0):
+    #                     nextCheck.add(m - square)
+    #         toCheck = nextCheck
+    #         cnt += 1
 
-        return 
+    #     return cnt
 
