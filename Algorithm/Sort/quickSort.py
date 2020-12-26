@@ -23,6 +23,19 @@ def quick_sort(array, start, end):
     quick_sort(array, right + 1, end)
 
 
-quick_sort(array, 0, len(array) - 1)
+def simple_quick_sort(array):
+    if len(array) <= 1:
+        return array
 
-print(array)
+    pivot = array[0]
+    tail = array[1:]
+
+    left_side = [x for x in tail if x <= pivot]
+    right_side = [x for x in tail if x > pivot]
+
+    return simple_quick_sort(left_side) + [pivot] + simple_quick_sort(right_side)
+
+
+# quick_sort(array, 0, len(array) - 1)
+
+print(simple_quick_sort(array))
