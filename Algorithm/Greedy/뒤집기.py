@@ -1,13 +1,14 @@
-# 뒤집기
-#  https://www.acmicpc.net/problem/1439
-nums = [int(s) for s in input()]
-filp_count = [0, 0]  # 전체 문자열을 1과 0로 만들기 위해 뒤집어야 하는 횟수
+# 만들 수 없는 금액
+# N개의 동전을 이용하여 만들 수 없는 양의 정수 금액 중 최솟값을 구하기
 
-for i in range(1, len(nums)):
-    # 이전 문자열과 다르면 뒤집기 (filp_count 증가)
-    if nums[i] != nums[i-1]:
-        filp_count[nums[i-1]] += 1
-# 마지막 문자에 대한 filp_count 증가
-filp_count[nums[-1]] += 1
-answer = min(filp_count[0], filp_count[1])
-print(answer)
+n = int(input())
+# 코인 오름차순 정렬
+coins = sorted(list(map(int, input().split())))
+min_coin = 1
+# 각 코인에 대해 만들 수 없는 최소 금액 업데이트
+for coin in coins:
+    # 코인이 최소 금액보다 커지면 최소 금액이 더이상 업데이트 될 일이 없으므로 break
+    if coin > min_coin:
+        break
+    min_coin += coin
+print(min_coin)
