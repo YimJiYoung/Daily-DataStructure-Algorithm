@@ -25,7 +25,7 @@ while q:
         if ny < 0 or nx < 0 or ny >= n or nx >= n:
             continue
 
-        if distances[ny][nx] < cost + space[ny][nx]:
+        if distances[ny][nx] > cost + space[ny][nx]:
             distances[ny][nx] = cost + space[ny][nx]
             heapq.heappush(q, (distances[ny][nx], ny, nx))
 
